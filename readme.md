@@ -1,5 +1,5 @@
 # Let There Be Flight
-testing updating modules to see if it works.....
+testing updating modules to see if it works...
 
 [![](https://byob.yarr.is/jackhumbert/let_there_be_flight/cp_version)](https://github.com/jackhumbert/let_there_be_flight/actions/workflows/build.yaml)
 
