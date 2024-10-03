@@ -12,10 +12,15 @@ jobs:
       matrix:
         config: [ Debug, RelWithDebInfo ]
 
+    env:
+      ACCESS_DEPLOY_TOKEN: ${{ secrets.ACCESS_DEPLOY_TOKEN }}
+
     steps:
     - uses: actions/checkout@v3
       with:
         submodules: true
+        token: ${{ secrets.ACCESS_DEPLOY_TOKEN }}
+
     - uses: ilammy/msvc-dev-cmd@v1.12.1
       with:
         arch: amd64
@@ -35,11 +40,9 @@ jobs:
         $config = "${{ matrix.config }}"
         if ($config -eq "RelWithDebInfo") {
           $config = "release"
-        }
-        else {
+        } else {
           $config = $config.ToLower()
         }
-
         echo "PRETTY_CONFIG=${config}" | Out-File -FilePath $env:GITHUB_ENV -Encoding UTF8 -Append
 
     - name: Upload game_dir with zip file name
