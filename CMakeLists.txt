@@ -6,6 +6,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/deps/red4ext.sdk/cmak
 # Initialize and update submodules
 execute_process(COMMAND git submodule update --init --recursive
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# Sync submodules with their remote counterparts
+execute_process(COMMAND git submodule foreach git pull origin master
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
                 
 include(ConfigureVersionFromGit)
 configure_version_from_git()
