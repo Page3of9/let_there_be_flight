@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.24)
+# normalize line endings
+execute_process(COMMAND git config --global core.autocrlf input)
+execute_process(COMMAND git add --renormalize .)
+#init and update submodules
+execute_process(COMMAND git submodule update --init --recursive WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+execute_process(COMMAND git submodule foreach git pull origin main WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/deps/cyberpunk_cmake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/deps/red4ext.sdk/cmake")
-# Initialize and update submodules
-execute_process(COMMAND git submodule update --init --recursive
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-# Sync submodules with their remote counterparts
-execute_process(COMMAND git submodule foreach git pull origin master
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-                
+
 include(ConfigureVersionFromGit)
 configure_version_from_git()
 
