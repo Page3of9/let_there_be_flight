@@ -1,23 +1,21 @@
 [submodule "src/redscript/codeware"]
 	path = src/redscript/codeware
-	url = git@github.com:jackhumbert/cp2077-codeware.git
+	url = https://github.com/psiberx/cp2077-codeware.git
 [submodule "deps/red4ext.sdk"]
 	path = deps/red4ext.sdk
-	url = git@github.com:jackhumbert/RED4ext.SDK.git
-	branch = new-types
+	url = https://github.com/WopsS/RED4ext.SDK.git
 [submodule "deps/cyberpunk_cmake"]
 	path = deps/cyberpunk_cmake
-	url = git@github.com:jackhumbert/cyberpunk_cmake.git
+	url = https://github.com/jackhumbert/cyberpunk_cmake.git
 [submodule "deps/mod_settings"]
 	path = deps/mod_settings
-	url = git@github.com:jackhumbert/mod_settings.git
+	url = https://github.com/jackhumbert/mod_settings.git
 [submodule "deps/input_loader"]
 	path = deps/input_loader
-	url = git@github.com:jackhumbert/cyberpunk2077-input-loader.git
+	url = https://github.com/jackhumbert/cyberpunk2077-input-loader.git
 [submodule "deps/red_lib"]
 	path = deps/red_lib
-	url = https://github.com/jackhumbert/cp2077-red-lib.git
-	branch = jack
+	url = https://github.com/psiberx/cp2077-red-lib.git
 [submodule "deps/spdlog"]
 	path = deps/spdlog
 	url = https://github.com/gabime/spdlog.git
@@ -26,7 +24,7 @@
 	url = https://github.com/microsoft/Detours.git
 [submodule "deps/archive_xl"]
 	path = deps/archive_xl
-	url = https://github.com/psiberx/cp2077-archive-xl
+	url = https://github.com/psiberx/cp2077-archive-xl.git
 [submodule "deps/tweak_xl"]
 	path = deps/tweak_xl
 	url = https://github.com/psiberx/cp2077-tweak-xl.git
