@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.24)
 execute_process(COMMAND git config --global core.autocrlf input)
 execute_process(COMMAND git add --renormalize .)
 #init and update submodules
-execute_process(COMMAND git submodule update --init --recursive WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+execute_process(COMMAND git submodule update --init --recursive --remote WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 execute_process(COMMAND git submodule foreach git pull origin main WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
